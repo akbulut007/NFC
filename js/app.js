@@ -328,7 +328,7 @@ async function loadMyCard() {
     document.getElementById("cardRole").innerText = currentCard.role || "-";
     document.getElementById("cardStatus").innerText = currentCard.status || "-";
 
-    let link = location.origin + "/scan.html?uid=" + encodeURIComponent(currentCard.uid);
+    let link = location.origin + "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
 
     let qrBox = document.getElementById("qrcode");
     qrBox.innerHTML = "";
@@ -343,7 +343,7 @@ async function loadMyCard() {
 function openQrLink() {
     if (!currentCard) return;
 
-    let link = location.origin + "/scan.html?uid=" + encodeURIComponent(currentCard.uid);
+    let link = location.origin + "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
     window.open(link, "_blank");
 }
 
