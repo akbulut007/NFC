@@ -13,10 +13,13 @@ async function signUp() {
     let password = document.getElementById("loginPassword").value;
     let message = document.getElementById("loginMessage");
 
-    const { error } = await supabaseClient.auth.signUp({
-        email: email,
-        password: password
-    });
+   const { error } = await supabaseClient.auth.signUp({
+    email: email,
+    password: password,
+    options: {
+        emailRedirectTo: "https://akbulut007.github.io/NFC/index.html"
+    }
+});
 
     if (error) {
         message.style.color = "#ef4444";
