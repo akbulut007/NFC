@@ -28,7 +28,7 @@ async function signUp() {
     }
 
     message.style.color = "#2dd4df";
-    message.innerText = "Account created. Please confirm your email, then login.";
+    message.innerText = "Account created. You can login now.";
 }
 
 async function login() {
