@@ -13,13 +13,10 @@ async function signUp() {
     let password = document.getElementById("loginPassword").value;
     let message = document.getElementById("loginMessage");
 
-   const { error } = await supabaseClient.auth.signUp({
-    email: email,
-    password: password,
-    options: {
-        emailRedirectTo: "https://akbulut007.github.io/NFC/index.html"
-    }
-});
+    const { error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password
+    });
 
     if (error) {
         message.style.color = "#ef4444";
@@ -313,7 +310,7 @@ async function updateDashboard() {
 }
 
 async function loadMyCard() {
-    if (!document.getElementById("cardUidText")) return;
+    if (!document.getElementById("qrImage")) return;
 
     const { data } = await supabaseClient
         .from("cards")
@@ -331,21 +328,16 @@ async function loadMyCard() {
     document.getElementById("cardRole").innerText = currentCard.role || "-";
     document.getElementById("cardStatus").innerText = currentCard.status || "-";
 
-    let link = location.origin + "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
+    let link = "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
 
-    document.getElementById("qrcode").innerHTML = "";
-
-new QRCode(document.getElementById("qrcode"), {
-    text: qrLink,
-    width: 220,
-    height: 220
-});
+    document.getElementById("qrImage").src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=" + encodeURIComponent(link);
 }
 
 function openQrLink() {
     if (!currentCard) return;
 
-    let link = location.origin + "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
+    let link = "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
     window.open(link, "_blank");
 }
 
