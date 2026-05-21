@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security | NFC System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="logo">NFC<span>.</span></div>
+
+            <nav class="menu">
+                <a href="index.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html">Users</a>
+                <a href="scan.html">NFC Scan</a>
+                <a href="logs.html">Logs</a>
+                <a href="reports.html">Reports</a>
+                <a href="security.html" class="active">Security</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+            <div class="topbar">
+                <div>
+                    <h1>Security & Architecture</h1>
+
+                    <p style="color:#8ca3af; margin-top:10px;">
+                        Authentication logic, access rules and simulated system structure.
+                    </p>
+                </div>
+
+                <div class="status-box">
+                    Protected System
+                </div>
+            </div>
+
+            <div class="report-grid">
+
+                <section class="panel">
+                    <h3>Role-Based Access Control</h3>
+
+                    <div class="security-list">
+
+                        <div class="security-item">
+                            Student cards are limited to public university areas.
+                        </div>
+
+                        <div class="security-item">
+                            Employee cards can access laboratories and staff zones.
+                        </div>
+
+                        <div class="security-item">
+                            Admin cards have full access to all locations.
+                        </div>
+
+                        <div class="security-item">
+                            Guest cards only allow temporary entrance access.
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h3>Authentication Workflow</h3>
+
+                    <table class="table">
+                        <tr>
+                            <td>Step 1</td>
+                            <td>NFC reader scans card UID.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Step 2</td>
+                            <td>System searches registered card database.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Step 3</td>
+                            <td>Card status and role permissions are checked.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Step 4</td>
+                            <td>Access is granted or denied.</td>
+                        </tr>
+
+                        <tr>
+                            <td>Step 5</td>
+                            <td>Authentication result is saved into logs.</td>
+                        </tr>
+                    </table>
+                </section>
+
+            </div>
+
+            <section class="panel">
+
+                <h3>System Architecture</h3>
+
+                <div class="security-list">
+
+                    <div class="security-item">
+                        NFC Card → NFC Reader → Authentication Layer → Access Control → Admin Dashboard
+                    </div>
+
+                    <div class="security-item">
+                        In a real environment, the frontend would communicate with a backend API and a cloud database.
+                    </div>
+
+                    <div class="security-item">
+                        This thesis prototype focuses on frontend simulation and system workflow visualization.
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="panel">
+
+                <h3>Security Notes</h3>
+
+                <p style="color:#c7d5dc; line-height:1.7;">
+                    This project demonstrates the logic of an NFC-based authentication system.
+                    In a production environment, encrypted communication, backend verification,
+                    secure databases and real NFC hardware integration would be required.
+                </p>
+
+            </section>
+
+            <div class="footer">
+                NFC-Based Card Management System - Security Layer
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

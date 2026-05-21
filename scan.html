@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Scan | NFC System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="logo">NFC<span>.</span></div>
+
+            <nav class="menu">
+                <a href="index.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html">Users</a>
+                <a href="scan.html" class="active">NFC Scan</a>
+                <a href="logs.html">Logs</a>
+                <a href="reports.html">Reports</a>
+                <a href="security.html">Security</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+            <div class="topbar">
+                <div>
+                    <h1>NFC Scan Terminal</h1>
+                    <p style="color:#8ca3af; margin-top:10px;">
+                        Simulated card reading and access authentication screen.
+                    </p>
+                </div>
+
+                <div class="status-box">
+                    Reader Simulation Active
+                </div>
+            </div>
+
+            <div class="report-grid">
+
+                <section class="panel scan-box">
+                    <div class="scan-circle">
+                        ⦿
+                    </div>
+
+                    <h3>Scan NFC Card</h3>
+
+                    <p style="color:#8ca3af; line-height:1.7; margin-bottom:25px;">
+                        Enter a card UID manually or generate a random scan.
+                        In a real system, this value would be received from an NFC reader.
+                    </p>
+
+                    <label>Card UID</label>
+                    <input type="text" id="scanUid" placeholder="A7F23D11">
+
+                    <label>Access Location</label>
+                    <select id="scanLocation">
+                        <option>Main Entrance</option>
+                        <option>Library</option>
+                        <option>Laboratory</option>
+                        <option>Server Room</option>
+                    </select>
+
+                    <button class="btn" onclick="scanCard()">Authenticate Card</button>
+                    <button class="btn" style="margin-left:10px;" onclick="randomScan()">Random Scan</button>
+                </section>
+
+                <section class="panel">
+                    <h3>Authentication Result</h3>
+
+                    <div id="scanResult" class="report-box">
+                        <h4>Waiting for scan</h4>
+                        <p style="color:#8ca3af; line-height:1.7;">
+                            No card has been scanned yet. The result will appear here
+                            after authentication.
+                        </p>
+                    </div>
+
+                    <br>
+
+                    <div class="security-list">
+                        <div class="security-item">
+                            Active card + permitted location = granted access.
+                        </div>
+
+                        <div class="security-item">
+                            Unknown, blocked or expired cards are denied.
+                        </div>
+
+                        <div class="security-item">
+                            Each scan is saved into the access logs.
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="panel">
+                <h3>Scan Process</h3>
+
+                <table class="table">
+                    <tr>
+                        <td>Step 1</td>
+                        <td>NFC card UID is read by the reader.</td>
+                    </tr>
+                    <tr>
+                        <td>Step 2</td>
+                        <td>The UID is checked against registered users.</td>
+                    </tr>
+                    <tr>
+                        <td>Step 3</td>
+                        <td>The system verifies card status and role permission.</td>
+                    </tr>
+                    <tr>
+                        <td>Step 4</td>
+                        <td>The access result is displayed and logged.</td>
+                    </tr>
+                </table>
+            </section>
+
+            <div class="footer">
+                NFC-Based Card Management System - Scan Terminal
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

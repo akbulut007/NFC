@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC Card Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="logo">NFC<span>.</span></div>
+
+            <nav class="menu">
+                <a href="index.html" class="active">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html">Users</a>
+                <a href="scan.html">NFC Scan</a>
+                <a href="logs.html">Logs</a>
+                <a href="reports.html">Reports</a>
+                <a href="security.html">Security</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+            <div class="topbar">
+                <div>
+                    <h1>NFC Card Management System</h1>
+
+                    <p style="color:#8ca3af; margin-top:10px;">
+                        Real authentication system powered by Supabase.
+                    </p>
+                </div>
+
+                <div class="status-box">
+                    Cloud Authentication
+                </div>
+            </div>
+
+            <div class="report-grid">
+
+                <section class="panel">
+
+                    <h3>Project Overview</h3>
+
+                    <p style="color:#c7d5dc; line-height:1.7;">
+                        This project demonstrates a realistic NFC-based card management
+                        and access control system. Authentication is handled using
+                        Supabase cloud authentication services.
+                    </p>
+
+                    <br>
+
+                    <p style="color:#8ca3af; line-height:1.7;">
+                        The system includes login security, user management,
+                        NFC scan simulation, access logs and role-based access control.
+                    </p>
+
+                </section>
+
+                <section class="panel">
+
+                    <h3>Admin Login</h3>
+
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="example@mail.com"
+                    >
+
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password"
+                    >
+
+                    <button class="btn" onclick="signUp()">
+                        Create Account
+                    </button>
+
+                    <button
+                        class="btn"
+                        style="margin-left:10px;"
+                        onclick="login()"
+                    >
+                        Login
+                    </button>
+
+                    <p
+                        id="loginMessage"
+                        style="margin-top:18px; color:#2dd4df;"
+                    ></p>
+
+                </section>
+
+            </div>
+
+            <div class="cards" style="margin-top:30px;">
+
+                <div class="card blue">
+                    <span>Authentication</span>
+                    <h2>Cloud</h2>
+                </div>
+
+                <div class="card green">
+                    <span>Database</span>
+                    <h2>Online</h2>
+                </div>
+
+                <div class="card yellow">
+                    <span>Access Type</span>
+                    <h2>NFC</h2>
+                </div>
+
+                <div class="card red">
+                    <span>Security</span>
+                    <h2>RBAC</h2>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                NFC-Based Card Management System - Engineering Thesis Prototype
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/supabase-config.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

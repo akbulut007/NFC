@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | NFC System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="logo">NFC<span>.</span></div>
+
+            <nav class="menu">
+                <a href="index.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html">Users</a>
+                <a href="scan.html">NFC Scan</a>
+                <a href="logs.html">Logs</a>
+                <a href="reports.html" class="active">Reports</a>
+                <a href="security.html">Security</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+            <div class="topbar">
+                <div>
+                    <h1>Reports</h1>
+                    <p style="color:#8ca3af; margin-top:10px;">
+                        Basic statistics and system analysis for thesis demonstration.
+                    </p>
+                </div>
+
+                <div class="status-box">
+                    Analytics Mode
+                </div>
+            </div>
+
+            <div class="cards">
+
+                <div class="card blue">
+                    <span>Total Cards</span>
+                    <h2 id="reportUsers">0</h2>
+                </div>
+
+                <div class="card green">
+                    <span>Active Cards</span>
+                    <h2 id="reportActive">0</h2>
+                </div>
+
+                <div class="card yellow">
+                    <span>Blocked Cards</span>
+                    <h2 id="reportBlocked">0</h2>
+                </div>
+
+                <div class="card red">
+                    <span>Denied Attempts</span>
+                    <h2 id="reportDenied">0</h2>
+                </div>
+
+            </div>
+
+            <div class="report-grid">
+
+                <section class="panel">
+                    <h3>Access Summary</h3>
+
+                    <div class="security-list">
+                        <div class="security-item">
+                            Granted access attempts show successful authentication.
+                        </div>
+
+                        <div class="security-item">
+                            Denied access attempts may indicate blocked cards, expired cards or invalid locations.
+                        </div>
+
+                        <div class="security-item">
+                            The system records each scan event for administrative review.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="panel">
+                    <h3>Card Status Distribution</h3>
+
+                    <table class="table">
+                        <tr>
+                            <td>Active Cards</td>
+                            <td id="activeReportLine">0</td>
+                        </tr>
+                        <tr>
+                            <td>Blocked Cards</td>
+                            <td id="blockedReportLine">0</td>
+                        </tr>
+                        <tr>
+                            <td>Expired Cards</td>
+                            <td id="expiredReportLine">0</td>
+                        </tr>
+                    </table>
+                </section>
+
+            </div>
+
+            <section class="panel">
+                <h3>Report Interpretation</h3>
+
+                <p style="color:#c7d5dc; line-height:1.7;">
+                    This report page gives a simple overview of user cards and access attempts.
+                    In a production system, this section could be extended with charts, monthly
+                    reports, suspicious activity detection and administrator export tools.
+                </p>
+            </section>
+
+            <div class="footer">
+                NFC-Based Card Management System - Reports
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

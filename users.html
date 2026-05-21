@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users | NFC System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="logo">NFC<span>.</span></div>
+
+            <nav class="menu">
+                <a href="index.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html" class="active">Users</a>
+                <a href="scan.html">NFC Scan</a>
+                <a href="logs.html">Logs</a>
+                <a href="reports.html">Reports</a>
+                <a href="security.html">Security</a>
+            </nav>
+        </aside>
+
+        <main class="content">
+
+            <div class="topbar">
+                <div>
+                    <h1>User & Card Management</h1>
+                    <p style="color:#8ca3af; margin-top:10px;">
+                        Register users, assign NFC cards and manage card status.
+                    </p>
+                </div>
+
+                <div class="status-box">
+                    Admin Panel
+                </div>
+            </div>
+
+            <div class="report-grid">
+
+                <section class="panel">
+                    <h3>Register New Card</h3>
+
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" placeholder="Muhammed Akbulut">
+
+                    <label>Student / Employee ID</label>
+                    <input type="text" id="personId" placeholder="45133">
+
+                    <label>Department</label>
+                    <input type="text" id="department" placeholder="Computer Engineering">
+
+                    <label>Role</label>
+                    <select id="role">
+                        <option>Student</option>
+                        <option>Employee</option>
+                        <option>Admin</option>
+                        <option>Guest</option>
+                    </select>
+
+                    <label>Card Status</label>
+                    <select id="status">
+                        <option>Active</option>
+                        <option>Blocked</option>
+                        <option>Expired</option>
+                    </select>
+
+                    <label>Card UID</label>
+                    <input type="text" id="cardUid" placeholder="A7F23D11">
+
+                    <button class="btn" onclick="generateUid()">Generate UID</button>
+                    <button class="btn" style="margin-left:10px;" onclick="addUser()">Register Card</button>
+
+                    <p id="userMessage" style="margin-top:18px; color:#2dd4df;"></p>
+                </section>
+
+                <section class="panel">
+                    <h3>Card Rules</h3>
+
+                    <div class="security-list">
+                        <div class="security-item">
+                            Student cards can access Main Entrance and Library.
+                        </div>
+
+                        <div class="security-item">
+                            Employee cards can access Main Entrance, Library and Laboratory.
+                        </div>
+
+                        <div class="security-item">
+                            Admin cards can access all system locations.
+                        </div>
+
+                        <div class="security-item">
+                            Blocked or expired cards are always denied.
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <section class="panel">
+                <h3>Registered Users</h3>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>ID</th>
+                            <th>Department</th>
+                            <th>Role</th>
+                            <th>Card UID</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="usersTable"></tbody>
+                </table>
+            </section>
+
+            <div class="footer">
+                NFC-Based Card Management System - Users
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
