@@ -333,14 +333,13 @@ async function loadMyCard() {
 
     let link = location.origin + "https://akbulut007.github.io/NFC/scan.html?uid=" + encodeURIComponent(currentCard.uid);
 
-    let qrBox = document.getElementById("qrcode");
-    qrBox.innerHTML = "";
+    document.getElementById("qrcode").innerHTML = "";
 
-    new QRCode(qrBox, {
-        text: link,
-        width: 180,
-        height: 180
-    });
+new QRCode(document.getElementById("qrcode"), {
+    text: qrLink,
+    width: 220,
+    height: 220
+});
 }
 
 function openQrLink() {
